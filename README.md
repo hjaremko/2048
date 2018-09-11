@@ -1,2 +1,5 @@
 # 2048
-My own take on the popular 2048 game. 
+
+```
+g++ .\main.cpp Board.cpp -o 2048
+```
