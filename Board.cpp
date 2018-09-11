@@ -45,7 +45,7 @@ void Board::moveColumn( auto t_begin, auto t_end )
     }
 }
 
-void Board::move( Direction t_direction )
+bool Board::move( Direction t_direction )
 {
     switch ( t_direction )
     {
@@ -71,7 +71,11 @@ void Board::move( Direction t_direction )
             moveColumn( rbegin( m_tiles ), rend( m_tiles ) );
 
             break;
+        default:
+            return false;
     }
+
+    return true;
 }
 
 int Board::getSize() const

@@ -1,8 +1,6 @@
 #pragma once
 
 #include <vector>
-#include <random>
-#include <ctime>
 
 #include "Tile.hpp"
 
@@ -14,13 +12,13 @@ class Board
 
         enum class Direction
         {
-            Left = 0,
-            Right,
-            Up,
-            Down
+            Left = 'a',
+            Right = 'd',
+            Up = 'w',
+            Down = 's'
         };
 
-        void move( Direction t_direction );
+        bool move( Direction t_direction );
         void moveRow( auto t_begin, auto t_end );
         void moveColumn( auto t_begin, auto t_end );
         void print() const;
