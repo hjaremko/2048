@@ -26,12 +26,12 @@ void Board::moveRow( auto t_begin, auto t_end )
     {
         for ( auto i = t_begin; i != t_end - 1; ++i )
         {
-            *i += *( i + 1 );
+            *i << *( i + 1 );
         }
     }
 }
 
-void Board::moveColumn( auto t_begin, auto t_end )
+void Board::moveColumns( auto t_begin, auto t_end )
 {
     for ( int i = 0; i < m_size; i++ ) //xD
     {
@@ -39,7 +39,7 @@ void Board::moveColumn( auto t_begin, auto t_end )
         {
             for ( auto row = t_begin; row != t_end - 1; ++row )
             {
-                row->at( colNo ) += ( row + 1 )->at( colNo );
+                row->at( colNo ) << ( row + 1 )->at( colNo );
             }   
         }
     }
@@ -64,11 +64,11 @@ bool Board::move( Direction t_direction )
 
             break;
         case Direction::Up:
-            moveColumn( begin( m_tiles ), end( m_tiles ) );
+            moveColumns( begin( m_tiles ), end( m_tiles ) );
 
             break;
         case Direction::Down:
-            moveColumn( rbegin( m_tiles ), rend( m_tiles ) );
+            moveColumns( rbegin( m_tiles ), rend( m_tiles ) );
 
             break;
         default:

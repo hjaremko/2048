@@ -20,7 +20,7 @@ class Board
 
         bool move( Direction t_direction );
         void moveRow( auto t_begin, auto t_end );
-        void moveColumn( auto t_begin, auto t_end );
+        void moveColumns( auto t_begin, auto t_end );
         void print() const;
         void makeNew();
         int getSize() const;

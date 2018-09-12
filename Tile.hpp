@@ -30,13 +30,15 @@ class Tile
             }
         }
 
-        Tile operator+=( Tile& rhs )
+        Tile& operator<<( Tile& rhs )
         {
             if ( m_value == rhs.m_value || m_value == 0 )
             {
                 m_value += rhs.m_value;
                 rhs.m_value = 0;
             }
+
+            return *this;
         }
     
     private:
