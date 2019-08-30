@@ -1,0 +1,3 @@
+[submodule "extern/cxxcurses"]
+	path = extern/cxxcurses
+	url = https://github.com/hjaremko/cxxcurses.git

@@ -1,20 +1,21 @@
 #include <cstdlib>
 #include <ctime>
-#include <conio.h>
-#include <windows.h>
+
+#include <cxxcurses/cxxcurses.hpp>
 
 #include "Tile.hpp"
 #include "Board.hpp"
 
 int main( int argc, char const *argv[] )
 {
-    // std::cout << "2048" << std::endl;
-    srand( time( 0 ) );
-
+    cxxcurses::initializer init;
+    //     std::cout << "2048" << std::endl;
+    srand( time( nullptr ) );
+//
     Board board( 4 );
     board.makeNew();
     board.makeNew();
-    system( "CLS" );
+    ::clear();
     board.print();
 
     while ( true )
@@ -23,7 +24,7 @@ int main( int argc, char const *argv[] )
             return 0;
 
         board.makeNew();
-        system( "CLS" );
+        ::clear();
         board.print();
     }
 
